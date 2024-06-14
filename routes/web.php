@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FuncController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,10 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return view('index');
 });
+
+
+Route::post('/contact', [FuncController::class, 'contact']);
+
+Route::get('/buy/{product}', [FuncController::class, 'buyProduct']);
+
+Route::post('/subscribe', [FuncController::class, 'subscribe']);
